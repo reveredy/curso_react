@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React para iniciantes</title>
+    <!-- Precisamos carregar React, React Dom e Babel -->
+    <!-- Temos que importar "2 reacts" pelo fato de que react também é utilizado para criar aplicativos mobile-->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- Quando usamos para site temos que usar o react dom junto -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <!-- Babel é usado para transformar código de Javascript novo em Javascript antigo, para ser suportado em todos navegadores -->
+    <!-- Também serve para transformar arquivo jsx em js, jsx não é reconhecido pelo browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function Button() {
+            const [total, setTotal] = React.useState(0);
+            return <button onClick={() => setTotal(total + 1)}>Adicionar {total}</button>;
+        }
+
+        function App() {
+            return <div>
+                <h1>Aplicativo React</h1>
+                <Button />
+                <Button />
+            </div>;
+        }
+
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+
+        root.render(<App />);
+    </script>
+</body>
+
+</html>
