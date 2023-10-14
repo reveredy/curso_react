@@ -1,0 +1,160 @@
+<!-- 
+    React Element
+
+    Todo elemento React é criado com a função createElement. O Babel é responsável por transformar o elemento criado com jSX (que se parece com HTML) em funções React.
+
+    function App(){
+        return <div id="container">Meu App</div>;
+    }
+
+    É transformado pelo Babel em:
+
+    function App(){
+        return React.createElement('div', { id: 'container' }, 'Meu App');
+        //1 argumento seria a tag que deseja
+        //2 argumento são os atributos (id, title, class etc...)
+        //3 argumento é o conteúdo interno da tag
+    }
+
+    Link para testar como funciona
+    https://babeljs.io/repl
+-->
+
+<!-- 
+    Componentes
+
+    Permitem você dividir a sua interface em pequenos elementos. São criados através de funções que retornam elementos React.
+
+    //Function Component
+    const Button = () => {
+        return <button>Comprar<button/>;
+    }
+-->
+
+<!-- 
+    Composição
+
+    O principal motivo de criarmos componentes é para podermos compor a interface
+    com diversos componentes que podem ser reutilizados.
+-->
+
+<!-- 
+    Eventos
+
+    Podemos atribuir eventos diretamente nos elementos.
+
+    const Produtos = () => {
+        function handleClick(event){
+            console.log('Comprou: ' + event.target.innerText);
+        }
+
+        return(
+            <div>
+                <button onClick={handleClick}>Camisa</button>
+                <button onClick={handleClick}>Bermuda</button>
+            </div>
+        )
+    }
+ -->
+
+<!-- 
+    Hooks
+
+    Utilizamos o React pela facilidade de sincronização do estado. Os Hooks são funções especiais de React,
+    o useState possibilita a sincronização do estado.
+
+    const Compras = () => {
+        //useState é um Hook que define uma variável reativa
+        const [count, setCount] = React.useState(0);
+
+        return (
+            <div>
+                <button onClick={() => setCount(count + 1)}>Comprar</button>
+                <p>Total: {count}</p>
+                <p>Preço: R$ {count * 250}</p>
+            </div>
+        );
+    };
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Carrega o React, React Dom e Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Aula 02</title>
+</head>
+
+<body>
+    <div class="container"></div>
+
+    <script type="text/babel">
+        function App() {
+            return <div>
+                <MainNav />
+                <h1>Aula 02</h1>
+                <Button />
+                <Compras />
+            </div>
+        }
+
+        function Produtos() {
+            const produto1 = "Camisa";
+            const produto2 = "Bermuda";
+
+            function handleClick(event) {
+                console.log("Comprou: " + event.target.innerText);
+            }
+
+            return <div>
+                <button onClick={handleClick}>{produto1} - R$ {(Math.random() * 10).toFixed()}</button>
+                <button onClick={handleClick}>{produto2} - R$ {(Math.random() * 10).toFixed()}</button>
+            </div>
+        }
+
+        const Button = () => {
+            return <button>Comprar</button>
+        }
+
+        const MainNav = () => {
+            return (
+                <nav>
+                    <li>
+                        <a href="#">Link 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Link 2</a>
+                    </li>
+                    <Produtos />
+                </nav>
+            )
+        }
+
+        const Compras = () => {
+            const [total, setTotal] = React.useState(1);
+
+            function handleClick() {
+                setTotal(total + 1);
+            }
+
+            return <div>
+                <button onClick={handleClick}>Comprar {total}</button>
+                <p>Total: {total}</p>
+                <p>Preço: {total * 250}</p>
+            </div>
+        }
+
+        const container = document.querySelector(".container");
+        const root = ReactDOM.createRoot(container);
+        root.render(<App />);
+    </script>
+</body>
+
+</html>
