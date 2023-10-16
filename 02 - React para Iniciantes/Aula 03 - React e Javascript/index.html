@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Javascript e React</title>
+</head>
+
+<body>
+    <div class="javascript">
+        <p>Total: <span id="total"></span></p>
+        <p>Preço: <span id="preco"></span></p>
+        <button id="button">Comprar</button>
+    </div>
+    <script type="application/javascript">
+        const total = document.querySelector("#total");
+        const preco = document.querySelector("#preco");
+        const button = document.querySelector("#button");
+        let contador = 1;
+
+        function handleClick() {
+            contador++;
+            atualizarValores();
+        }
+
+        function atualizarValores() {
+            total.innerText = contador;
+            preco.innerText = contador * 250;
+        }
+
+        atualizarValores(contador);
+
+        button.addEventListener("click", handleClick);
+    </script>
+
+    <div id="app-react"></div>
+    <script type="text/babel">
+        const App = () => {
+            const [total, setTotal] = React.useState(1);
+
+            return <div>
+                <p>Total: {total}</p>
+                <p>Preço: {total * 250}</p>
+                <button onClick={() => setTotal(total + 1)}>Comprar</button>
+            </div>
+        }
+
+        const root = ReactDOM.createRoot(document.querySelector("#app-react")).render(<App />);
+    </script>
+</body>
+
+</html>

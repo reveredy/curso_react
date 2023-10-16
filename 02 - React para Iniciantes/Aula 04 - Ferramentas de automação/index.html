@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramentas de automação</title>
+</head>
+
+<body>
+    <!-- 
+        Bundler
+
+        Agrupa(bundle) o código do seu aplicativo
+
+        Permite definirmos os componentes em diferentes arquivos para melhor organização
+
+        Facilita a importação de código externo instalado via NPM
+
+        Alguns exemplos de Bundler:
+        ESBuild, Rollup, Parcel, Turbopack, Webpack
+    -->
+    <!-- 
+        Transpiler
+
+        Transforma JSX ( return <div></div> ) em funções de React React.createElement()
+
+        Transforma Javascript novo ( const ) em Javascript antigo ( var )
+
+        Alguns exemplos de transpiler:
+        Babel, SWC, ESBuild
+    -->
+    <!-- 
+        ESBuild Mínimo
+
+        https://esbuild.github.io
+
+
+        iniciar um pacote NPM na pasta do seu aplicativo.
+        npm init -y
+        (-y aceita todas as perguntas feitas na hora da criação do npm init)
+    -->
+    <div id="root"></div>
+    <script src="./main.js"></script>
+
+    <!--
+        Próximo passo é instalar o ESBuild
+    
+        npm install esbuild
+
+        Depois, adicionar os scripts:
+
+        Adicionar os scripts de desenvolvimento e build ao package.json
+
+        "scripts": {
+            "start": "esbuild --bundle src/main.jsx --outfile=main.js --servedir=./ --watch",
+            "build": "esbuild --bundle src/main.jsx --outfile=main.js"
+        }
+
+        Alguns comandos uteis com o NPM
+        npm install e o nome do pacote (para instalar algum pacote com npm)
+        npm start para iniciar um servidor (Tem que ter configurado o script no package.json)
+        CTRL + C no terminal para finalizar o aplicativo
+        npm run build para gerar o arquivo final do aplicativo, transpilado e tudo mais
+    -->
+</body>
+
+</html>
