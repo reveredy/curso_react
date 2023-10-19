@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css">
+  <title>Ambiente do Curso</title>
+</head>
+<!-- 
+  Modo Estrito
+
+  O modo estrito do React permite pegarmos alguns bugs no desenvolvimento.
+
+  Sem Modo Estrito
+  ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+
+  Com o Modo Estrito
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    <React.StrictMode>
+      <App/>
+    </React.StrictMode>
+  );
+ -->
+
+<!-- 
+  JSX
+
+  Javascript XML / Extension. Estende a sintaxe do Javascript, introduzindo elementos XML que são convertidos em funções de React.
+
+  const App = () => {
+    return <button>Comprar</button>;
+  };
+
+  É transformado pelo Babel em:
+
+  const App = () =>{
+    return React.createElement('button', null, 'Comprar');
+  };
+
+  É possível utilizar a extensão .jsx
+  -->
+<!-- 
+    Atributos
+
+    Atributos podem ser passados como no HTML, porém com alguns casos especiais.
+
+    O caso especial mais comum é o atributo class. Pelo fato de class ser uma palavra reservada do Javascript, o JSX resolveu mudar o nome para evitar conflitos.
+    O correto em JSX é className
+   -->
+<!-- 
+  camelCase
+
+  Atributos com nomes compostos devem ser utilizados como camelCase. Exemplo: autoplay vira autoPlay.
+
+  const App = () => {
+    return <video autoPlay />
+  }
+-->
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/index.jsx"></script>
+</body>
+
+</html>

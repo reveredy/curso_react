@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css">
+  <title>Vite + React</title>
+</head>
+<!-- 
+  JSX Arrays
+
+  O JSX irá listar cada um dos itens da array lado a lado. Ele não irá separar ou colocar vírgulas, é você que deve modificar a array para o resultado desejado.
+-->
+<!-- 
+  Keys
+
+  O JSX necessita de uma key única para cada elemento da array.
+  https://reactjs.org/docs/lists-and-keys.html
+
+  const App = () => {
+    const empresas = [<li key="e1">Apple</li>, <li key="e2">Google</li>];
+
+    return <ul>{empresas}</ul>
+  }
+-->
+<!-- 
+    Map
+
+    É comum usarmos o map direto na array como uma expressãom retornando um elemento para cada item novo da Array.
+-->
+<!-- 
+  Array de Objetos
+
+  O cenário mais comum é trabalhar com array's de objetos.
+
+  [
+  {nome: "Carlos", idade: 33}
+  ]
+ -->
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/index.jsx"></script>
+</body>
+
+</html>
