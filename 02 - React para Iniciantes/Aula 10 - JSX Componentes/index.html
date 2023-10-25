@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css">
+  <title>JSX Componentes</title>
+</head>
+<!-- 
+  Componentes
+
+  O ideal é dividir o aplicativo em pequenos componentes para facilitar a manutenção do mesmo.
+  Iremos trabalhar durante o curso com os chamados componentes funcionais (exportados em funções)
+ -->
+<!-- 
+  Interface
+
+  Não existe limite para a composição de componentes, eles podem ser desde componentes gerais
+  como Header e Footer, até micro componentes como input e Button.
+  Form.jsx
+ -->
+<!-- 
+  Return
+
+  Um componente deve sempre retornar algo. O retorno pode ser qualquer tipo de dado aceito pelo JSX (String, array, um elemento JSX, null e etc);
+
+  Não podemos retornar um objeto, por exemplo.
+ -->
+<!-- 
+  React.Fragment
+
+  Um componente deve sempre retornar um elemento único no return. Caso você deseje retornar mais de um elemento,
+  envolva os mesmos em um div ou dentro do <React.Fragment></React.Fragment> ou <></> que é a mesma coisa (forma abreviada)
+ -->
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/index.jsx"></script>
+</body>
+
+</html>

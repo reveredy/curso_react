@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSX Propriedades</title>
+</head>
+<!-- 
+  Propriedades
+
+  Assim como uma função pode receber argumentos, podemos também passar argumentos aos componentes.
+  Esses são conhecidos como propriedades ou props.
+ -->
+<!-- 
+  Múltiplas Propriedades
+
+  Podemos passar quantas propriedades quisermos
+ -->
+<!-- 
+  Desestruturação
+
+  É comum desestruturarmos as propriedades.
+ -->
+<!-- 
+  Rest e Spread
+
+  Usamos o rest e spread quando não sabemos todas as propriedades que um componente pode receber.
+
+  import React from 'react';
+
+  const Input = () => ({label, id, ...props}) => {
+    return (
+      <div>
+        <label htmlFor={id}>{label}</label>
+        <input id={id} type="text" {...props} />
+      </div>
+    );
+  };
+
+  export default Input;
+
+  Podemos ser criativos com as propriedades
+ -->
+<!-- 
+  Dados
+
+  Podemos passar diferentes tipos de dados e até outros componentes nas propriedades.
+ -->
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/index.jsx"></script>
+</body>
+
+</html>

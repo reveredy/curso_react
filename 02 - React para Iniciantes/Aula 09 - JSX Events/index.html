@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css">
+  <title>JSX Events</title>
+</head>
+<!-- 
+  Events
+
+  Podemos atribuir eventos diretamente aos elementos JSX como um atributo.
+  Os eventos são sintáticos, ou seja, são criados pelo próprio React porém seguindo as especificações da W3C (e funcionam igualmente nos diversos browsers que o React suporta).
+
+  Lista dos eventos React:
+  https://reactejs.org/docs/events.html
+ -->
+<!-- 
+  Função anônima
+
+  É possível executar uma função anônima no evento.
+
+  <button onClick={(event) => alert(event.target.innerText)}>Click</button>
+  
+  Usado normalmente quando for algo muito especifico e pequeno, que não necessite criar uma função fora
+ -->
+<!-- 
+  window/document
+
+  Eventos no window/document ou qualquer elemento fora do React, devem ser adicionados com Javascript normalmente.
+  usando o addEventListener.
+ -->
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/index.jsx"></script>
+</body>
+
+</html>
